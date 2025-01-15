@@ -1,0 +1,248 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component classes */
+@layer components {
+  /* Layout Components */
+  .page-container {
+    @apply min-h-screen bg-gray-50;
+  }
+
+  .main-content {
+    @apply container mx-auto px-4 py-6;
+  }
+
+  /* Navigation */
+  .nav-container {
+    @apply bg-white shadow-lg mb-6;
+  }
+
+  .nav-content {
+    @apply container mx-auto px-4 py-3 flex justify-between items-center;
+  }
+
+  .nav-button {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+  }
+
+  .nav-button-active {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+
+  .nav-button-inactive {
+    @apply text-gray-600 hover:bg-gray-100;
+  }
+
+  /* Cards */
+  .dashboard-card {
+    @apply bg-white rounded-lg shadow-md p-6 mb-6;
+  }
+
+  .info-card {
+    @apply bg-white rounded-lg shadow-sm p-4 border border-gray-200;
+  }
+
+  /* Route Optimization Section */
+  .route-card {
+    @apply border border-gray-200 rounded-lg p-4 mb-4 hover:shadow-md transition-all duration-200;
+  }
+
+  .route-header {
+    @apply flex justify-between items-center mb-3;
+  }
+
+  .route-title {
+    @apply text-lg font-semibold text-gray-800;
+  }
+
+  .route-details {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+  }
+
+  .route-stat {
+    @apply flex flex-col;
+  }
+
+  .route-stat-label {
+    @apply text-sm text-gray-500;
+  }
+
+  .route-stat-value {
+    @apply text-lg font-medium text-gray-800;
+  }
+
+  /* Recycling Tips Section */
+  .tips-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .tip-card {
+    @apply bg-white rounded-lg shadow-sm p-4 border border-gray-200 hover:shadow-md transition-all duration-200;
+  }
+
+  .tip-category {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700 mb-2;
+  }
+
+  .tip-title {
+    @apply text-lg font-semibold mb-2 text-gray-800;
+  }
+
+  .tip-description {
+    @apply text-gray-600 text-sm;
+  }
+
+  /* Feedback Form */
+  .feedback-form {
+    @apply max-w-lg mx-auto space-y-4;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-select {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+
+  .form-textarea {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[150px];
+  }
+
+  .submit-button {
+    @apply w-full bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors duration-200;
+  }
+
+  /* Analytics Section */
+  .analytics-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-lg shadow-sm p-4 border border-gray-200;
+  }
+
+  .stat-title {
+    @apply text-sm text-gray-500 mb-1;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-gray-800;
+  }
+
+  .chart-container {
+    @apply bg-white rounded-lg shadow-sm p-6 border border-gray-200;
+  }
+
+  /* Loading States */
+  .loading-spinner {
+    @apply w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin;
+  }
+
+  .loading-overlay {
+    @apply absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center;
+  }
+
+  /* Alerts */
+  .alert-success {
+    @apply bg-secondary-100 border-l-4 border-secondary-500 p-4 mb-4 text-secondary-700;
+  }
+
+  .alert-error {
+    @apply bg-red-100 border-l-4 border-red-500 p-4 mb-4 text-red-700;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .main-content {
+    @apply px-2 py-4;
+  }
+
+  .dashboard-card {
+    @apply p-4;
+  }
+
+  .analytics-grid {
+    @apply grid-cols-1 gap-4;
+  }
+
+  .tips-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .page-container {
+    @apply bg-gray-900;
+  }
+
+  .dashboard-card,
+  .info-card,
+  .tip-card,
+  .stat-card,
+  .chart-container {
+    @apply bg-gray-800 border-gray-700;
+  }
+
+  .nav-container {
+    @apply bg-gray-800;
+  }
+
+  .nav-button-inactive {
+    @apply text-gray-300 hover:bg-gray-700;
+  }
+
+  .route-title,
+  .tip-title,
+  .stat-value {
+    @apply text-gray-100;
+  }
+
+  .route-stat-label,
+  .tip-description,
+  .stat-title {
+    @apply text-gray-400;
+  }
+
+  .form-select,
+  .form-textarea {
+    @apply bg-gray-700 border-gray-600 text-gray-100;
+  }
+
+  .loading-overlay {
+    @apply bg-gray-900 bg-opacity-75;
+  }
+}
