@@ -33,19 +33,12 @@ const feedbackController = {
 
   // Get Feedback by Type
   getFeedbackByType: async (req, res) => {
-    try {
-      const { type } = req.params;
-
-      // Validate feedback type
-      if (!["complaint", "suggestion", "compliment"].includes(type)) {
-        return res.status(400).json({ message: "Invalid feedback type!" });
-      }
-
-      const feedbacks = await Feedback.find({ type });
-      res.status(200).json(feedbacks);
-    } catch (error) {
-      res.status(500).json({ message: "Error fetching feedback by type.", error: error.message });
-    }
+   try {
+    const feedback = await Feedback.find()
+    res.status(200).json(feedback)
+   }catch(error){
+    res.status(500).json({error: error.message})
+   }
   },
 
   // Update Feedback
