@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from 'axios';
+
 
 const AuthenticationPage = ({ onLoginSuccess }) => {
   const [isLogin, setIsLogin] = useState(true); // Toggle between login and signup
