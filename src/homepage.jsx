@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RouteOptimization from './components/RouteOptimization';
 import RecyclingTips from './components/RecyclingTips';
 import FeedbackForm from './components/FeedbackForm';
-import Analytics from './components/Analytics';
+import Analytics from './components/AnalyticsDashboard';
 import AuthenticationPage from './login';
 const WasteManagementSystem = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
@@ -21,9 +21,9 @@ const WasteManagementSystem = () => {
   const fetchInitialData = async () => {
     try {
       const [routesRes, tipsRes, analyticsRes] = await Promise.all([
-        fetch('http://localhost:5000/api/optimize-route'),
-        fetch('http://localhost:5000/api/recycling-tips'),
-        fetch('http://localhost:5000/api/analytics'),
+        fetch('http://localhost:3000/api/optimize-route'),
+        fetch('http://localhost:3000/api/recycling-tips'),
+        fetch('http://localhost:3000/api/analytics'),
       ]);
 
       setRoutes(await routesRes.json());
@@ -96,7 +96,7 @@ const WasteManagementSystem = () => {
             {activeTab === 'feedback' && (
               <FeedbackForm feedback={feedback} setFeedback={setFeedback} />
             )}
-            {activeTab === 'analytics' && analytics && <Analytics analytics={analytics} />}
+         {activeTab === 'analytics' && <Analytics analytics={analytics} />}
           </main>
         </>
       )}
