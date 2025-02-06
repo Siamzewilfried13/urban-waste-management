@@ -20,13 +20,13 @@ const AnalyticsDashboard = () => {
     { name: "Route A", efficiency: 85 },
     { name: "Route B", efficiency: 78 },
     { name: "Route C", efficiency: 92 },
-    { name: "Route D", efficiency: 88 },
+    
   ];
 
   const feedbackData = [
-    { name: "Positive", value: 400 },
-    { name: "Neutral", value: 300 },
-    { name: "Negative", value: 100 },
+    { name: "Positive", value: 400, fill: "#10B981" },
+    { name: "Neutral", value: 300 , fill: "#6B7280"},
+    { name: "Negative", value: 100 , fill: "#EF4444"},
   ];
 
   // Key metrics
@@ -168,7 +168,7 @@ const AnalyticsDashboard = () => {
                   cx="50%"
                   cy="50%"
                   outerRadius={100}
-                  fill="#8884d8"
+                  fillKey="fill"
                   label
                 />
                 <Tooltip />

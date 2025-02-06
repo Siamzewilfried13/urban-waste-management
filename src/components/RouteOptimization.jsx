@@ -136,7 +136,6 @@ const WasteCollection = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -200,14 +199,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    backgroundColor: '#0277bd',
+    backgroundColor: '#4CAF50',  // Green background
     borderRadius: 5,
   },
   buttonText: {
-    color: '#fff',
+    color: '#fff', // White text on the green button
     fontSize: 16,
     textAlign: 'center',
   }
 });
+
 
 export default WasteCollection;
